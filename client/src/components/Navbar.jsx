@@ -205,17 +205,30 @@
 //   );
 // };
 
-// export default Navbar;
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { FaUserCircle } from 'react-icons/fa'; // Import user profile icon
+import AuthPopup from './AuthPopup';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const isLoggedIn = localStorage.getItem("token");
+
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Remove token
+    window.location.reload(); // Reload to reflect logout
   };
 
   return (
@@ -225,7 +238,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img
-                src="src\assets\Images\L5.jpg" // Replace with the path to your logo image
+                src="src/assets/Images/L5.jpg" // Replace with the path to your logo image
                 alt="Logo"
                 className="h-8 w-8 hover:opacity-75 transition-opacity duration-300"
               />
@@ -238,10 +251,10 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex flex-grow justify-center">
             <div className="flex space-x-4 bg-white rounded-full shadow-md p-2 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              {['Success Stories', 'Current News', 'Crypto', 'Blockchain', 'Budget Tools'].map((item) => (
+              {['Home','Success Stories', 'Current News', 'Crypto', 'Budget Tools'].map((item) => (
                 <Link
                   key={item}
-                  to={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
                   className="text-sm font-medium text-gray-700 hover:bg-indigo-100 hover:text-indigo-700 rounded-full px-4 py-2 transition-all duration-300 transform hover:scale-105"
                 >
                   {item}
@@ -250,18 +263,67 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none transition-all duration-300"
-            >
-              {isMenuOpen ? (
-                <X className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="block h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
+          {/* Right Side: Get Started Button & Profile */}
+          <div className="flex items-center space-x-4">
+            {/* Show Get Started only if NOT logged in */}
+            {!isLoggedIn && (
+              <button 
+               className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                onClick={() =>{ setIsAuthOpen(true);
+                  console.log("Open Auth Modal")
+                 }
+                   }
+              >
+               Login
+              </button>
+               
+              
+            )}
+
+            {/* Profile Icon & Dropdown (Only if logged in) */}
+            {isLoggedIn && (
+              <div className="relative">
+                <button 
+                  onClick={toggleDropdown} 
+                  className="text-gray-700 hover:text-indigo-600 transition-all duration-300 focus:outline-none"
+                >
+                  <FaUserCircle className="h-7 w-7" />
+                </button>
+
+                {/* Dropdown Menu */}
+                {isDropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg">
+                    <Link 
+                      to="/profile" 
+                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      Profile
+                    </Link>
+                    <button 
+                      onClick={handleLogout} 
+                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={toggleMenu}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none transition-all duration-300"
+              >
+                {isMenuOpen ? (
+                  <X className="block h-6 w-6" aria-hidden="true" />
+                ) : (
+                  <Menu className="block h-6 w-6" aria-hidden="true" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -283,8 +345,18 @@ const Navbar = () => {
           </div>
         </div>
       )}
+      {/* {isAuthOpen && <Login closeModal={() => setIsAuthOpen(false)} />} */}
+      {isAuthOpen && (
+  <AuthPopup 
+    isOpen={isAuthOpen} 
+    onClose={() => setIsAuthOpen(false)} // This closes the AuthPopup
+  />
+)}
+
     </nav>
   );
 };
 
 export default Navbar;
+
+

@@ -119,7 +119,7 @@ const Signup = ({ onClose, switchToLogin }) => {
                   Register
                 </button>
               </form>
-              <div className="social-login">
+              {/* <div className="social-login">
                 <p>or register with social platforms</p>
                 <div className="social-icons">
                   <button className="social-icon">
@@ -135,7 +135,7 @@ const Signup = ({ onClose, switchToLogin }) => {
                     <FaLinkedin />
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="right-panel-reg">

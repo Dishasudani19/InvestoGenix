@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { TrendingUp, DollarSign, PieChart, BookOpen, Award, ArrowRight, ChevronRight } from 'lucide-react';
 import AuthPopup from '../components/AuthPopup';
 const Landing = () => {
-
+  
+  
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   return (
     <div className="flex flex-col">
@@ -16,10 +17,15 @@ const Landing = () => {
                 Learn, plan, and grow with our expert financial education resources and tools.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <button className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" onClick={() => setIsAuthOpen(true)}>
-                  Get Started
-                </button>
-                <button className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors">
+              {!localStorage.getItem("token") && (
+  <button 
+    className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" 
+    onClick={() => setIsAuthOpen(true)}
+  >
+    Get Started
+  </button>
+)}
+                <button className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                   Learn More
                 </button>
               </div>
@@ -245,7 +251,7 @@ const Landing = () => {
                 />
                 <button 
                   type="submit" 
-                  className="bg-indigo-800 hover:bg-indigo-900 px-6 py-3 rounded-lg font-semibold transition-colors"
+                  className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
                   Subscribe
                 </button>
