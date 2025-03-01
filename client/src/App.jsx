@@ -12,6 +12,9 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import AboutUs from "./pages/AboutUs";
+import Courses from "./pages/Courses";
+import JotformChatbot from "./components/GenixBot";
+import GenixBotUI from "./components/GenixBot";
 
 
 const App = () => {
@@ -31,6 +34,8 @@ const App = () => {
                         <Route path="/budget-tools" element={<BudgetTools />} />
                         <Route path="/about-us" element={<AboutUs />} />
                         <Route path="/profile" element={<Profile />} />
+                        <Route path="/courses" element={<Courses />} />
+                        <Route path="/chatbot" element={<GenixBotUI />} />
                     </Routes>
                 </main>
 

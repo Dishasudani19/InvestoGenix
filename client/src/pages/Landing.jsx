@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { TrendingUp, DollarSign, PieChart, BookOpen, Award, ArrowRight, ChevronRight } from 'lucide-react';
 import AuthPopup from '../components/AuthPopup';
+import { useNavigate } from "react-router-dom";
 const Landing = () => {
   
   
   const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -25,7 +28,7 @@ const Landing = () => {
     Get Started
   </button>
 )}
-                <button className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <button className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"  onClick={() => navigate('/about-us')}  >
                   Learn More
                 </button>
               </div>

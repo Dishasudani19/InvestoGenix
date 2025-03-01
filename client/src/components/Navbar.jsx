@@ -270,6 +270,16 @@ const Navbar = () => {
                   {item}
                 </Link>
               ))}
+
+              {/* Show "Courses" only if the user is logged in */}
+              {isLoggedIn && (
+                <Link
+                  to="/courses"
+                  className="text-sm font-medium text-gray-700 hover:bg-indigo-100 hover:text-indigo-700 rounded-full px-4 py-2 transition-all duration-300 transform hover:scale-105"
+                >
+                  Courses
+                </Link>
+              )}
             </div>
           </div>
 
@@ -292,12 +302,11 @@ const Navbar = () => {
             {isLoggedIn && (
               <div className="relative">
                 <button 
-  onClick={toggleDropdown} 
-  className="text-gray-700 hover:text-indigo-600 transition-all duration-300 focus:outline-none bg-transparent border-none"
->
-  <FaUserCircle className="h-7 w-7 text-gray-700" />
-</button>
-
+                  onClick={toggleDropdown} 
+                  className="text-gray-700 hover:text-indigo-600 transition-all duration-300 focus:outline-none bg-transparent border-none"
+                >
+                  <FaUserCircle className="h-7 w-7 text-gray-700" />
+                </button>
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
@@ -357,10 +366,21 @@ const Navbar = () => {
                 {item}
               </Link>
             ))}
+
+            {/* Show "Courses" in mobile menu only if user is logged in */}
+            {isLoggedIn && (
+              <Link
+                to="/courses"
+                className="block px-4 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-100 hover:text-indigo-700 transition-all duration-300 transform hover:translate-x-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Courses
+              </Link>
+            )}
           </div>
         </div>
       )}
-      {/* {isAuthOpen && <Login closeModal={() => setIsAuthOpen(false)} />} */}
+
       {isAuthOpen && (
         <AuthPopup
           isOpen={isAuthOpen}
@@ -372,3 +392,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
