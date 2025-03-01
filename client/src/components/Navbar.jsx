@@ -19,7 +19,7 @@
 //               <span className="ml-2 text-xl font-bold">FinanceEdu</span>
 //             </Link>
 //           </div>
-          
+
 //           {/* Desktop Navigation */}
 //           <div className="hidden md:flex items-center space-x-4">
 //             <Link to="/success-stories" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-600 transition-colors">
@@ -38,7 +38,7 @@
 //               Budget Tools
 //             </Link>
 //           </div>
-          
+
 //           {/* Mobile menu button */}
 //           <div className="md:hidden flex items-center">
 //             <button
@@ -59,36 +59,36 @@
 //       {isMenuOpen && (
 //         <div className="md:hidden">
 //           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-//             <Link 
-//               to="/success-stories" 
+//             <Link
+//               to="/success-stories"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
 //               Success Stories
 //             </Link>
-//             <Link 
-//               to="/current-news" 
+//             <Link
+//               to="/current-news"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
 //               Current News
 //             </Link>
-//             <Link 
-//               to="/crypto" 
+//             <Link
+//               to="/crypto"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
 //               Crypto
 //             </Link>
-//             <Link 
-//               to="/blockchain" 
+//             <Link
+//               to="/blockchain"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
 //               Blockchain
 //             </Link>
-//             <Link 
-//               to="/budget-tools" 
+//             <Link
+//               to="/budget-tools"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
@@ -123,7 +123,7 @@
 //               <span className="ml-2 text-xl font-bold">FinanceEdu</span>
 //             </Link>
 //           </div>
-          
+
 //           {/* Desktop Navigation */}
 //           <div className="hidden md:flex items-center space-x-4">
 //             <Link to="/success-stories" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-600 transition-colors">
@@ -142,7 +142,7 @@
 //               Budget Tools
 //             </Link>
 //           </div>
-          
+
 //           {/* Mobile menu button */}
 //           <div className="md:hidden flex items-center">
 //             <button
@@ -163,36 +163,36 @@
 //       {isMenuOpen && (
 //         <div className="md:hidden">
 //           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-//             <Link 
-//               to="/success-stories" 
+//             <Link
+//               to="/success-stories"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
 //               Success Stories
 //             </Link>
-//             <Link 
-//               to="/current-news" 
+//             <Link
+//               to="/current-news"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
 //               Current News
 //             </Link>
-//             <Link 
-//               to="/crypto" 
+//             <Link
+//               to="/crypto"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
 //               Crypto
 //             </Link>
-//             <Link 
-//               to="/blockchain" 
+//             <Link
+//               to="/blockchain"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
 //               Blockchain
 //             </Link>
-//             <Link 
-//               to="/budget-tools" 
+//             <Link
+//               to="/budget-tools"
 //               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-indigo-600"
 //               onClick={() => setIsMenuOpen(false)}
 //             >
@@ -205,11 +205,11 @@
 //   );
 // };
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { FaUserCircle } from 'react-icons/fa'; // Import user profile icon
-import AuthPopup from './AuthPopup';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { FaUserCircle } from "react-icons/fa"; // Import user profile icon
+import AuthPopup from "./AuthPopup";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -251,10 +251,20 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex flex-grow justify-center">
             <div className="flex space-x-4 bg-white rounded-full shadow-md p-2 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-              {['Home','Success Stories', 'Current News', 'Crypto', 'Budget Tools'].map((item) => (
+              {[
+                "Home",
+                "Success Stories",
+                "Current News",
+                "Crypto",
+                "Budget Tools",
+              ].map((item) => (
                 <Link
                   key={item}
-                  to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  to={
+                    item === "Home"
+                      ? "/"
+                      : `/${item.toLowerCase().replace(/\s+/g, "-")}`
+                  }
                   className="text-sm font-medium text-gray-700 hover:bg-indigo-100 hover:text-indigo-700 rounded-full px-4 py-2 transition-all duration-300 transform hover:scale-105"
                 >
                   {item}
@@ -267,42 +277,41 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             {/* Show Get Started only if NOT logged in */}
             {!isLoggedIn && (
-              <button 
-               className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-                onClick={() =>{ setIsAuthOpen(true);
-                  console.log("Open Auth Modal")
-                 }
-                   }
+              <button
+                className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                onClick={() => {
+                  setIsAuthOpen(true);
+                  console.log("Open Auth Modal");
+                }}
               >
-               Login
+                Login
               </button>
-               
-              
             )}
 
             {/* Profile Icon & Dropdown (Only if logged in) */}
             {isLoggedIn && (
               <div className="relative">
                 <button 
-                  onClick={toggleDropdown} 
-                  className="text-gray-700 hover:text-indigo-600 transition-all duration-300 focus:outline-none"
-                >
-                  <FaUserCircle className="h-7 w-7" />
-                </button>
+  onClick={toggleDropdown} 
+  className="text-gray-700 hover:text-indigo-600 transition-all duration-300 focus:outline-none bg-transparent border-none"
+>
+  <FaUserCircle className="h-7 w-7 text-gray-700" />
+</button>
+
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg">
-                    <Link 
-                      to="/profile" 
+                    <Link
+                      to="/profile"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
                       onClick={() => setIsDropdownOpen(false)}
                     >
                       Profile
                     </Link>
-                    <button 
-                      onClick={handleLogout} 
-                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
+                    <button
+                      onClick={handleLogout}
+                      className="bg-white w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
                     >
                       Logout
                     </button>
@@ -332,10 +341,16 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {['Success Stories', 'Current News', 'Crypto', 'Blockchain', 'Budget Tools'].map((item) => (
+            {[
+              "Success Stories",
+              "Current News",
+              "Crypto",
+              "Blockchain",
+              "Budget Tools",
+            ].map((item) => (
               <Link
                 key={item}
-                to={`/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
                 className="block px-4 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-100 hover:text-indigo-700 transition-all duration-300 transform hover:translate-x-1"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -347,16 +362,13 @@ const Navbar = () => {
       )}
       {/* {isAuthOpen && <Login closeModal={() => setIsAuthOpen(false)} />} */}
       {isAuthOpen && (
-  <AuthPopup 
-    isOpen={isAuthOpen} 
-    onClose={() => setIsAuthOpen(false)} // This closes the AuthPopup
-  />
-)}
-
+        <AuthPopup
+          isOpen={isAuthOpen}
+          onClose={() => setIsAuthOpen(false)} // This closes the AuthPopup
+        />
+      )}
     </nav>
   );
 };
 
 export default Navbar;
-
-
