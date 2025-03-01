@@ -3,6 +3,8 @@
     max-width: 1280px;
     margin: 0 auto;
     padding: 3rem 1rem;
+    /* background-color: white; */
+    /* color: white; */
   }
   
   .news-container h1 {
@@ -11,6 +13,7 @@
     color: #111827;
     margin-bottom: 2rem;
   }
+  
   
   .news-container p.description {
     font-size: 1.125rem;
@@ -50,6 +53,7 @@
   
   /* News grid */
   .news-grid {
+    /* background-color:  white; */
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;

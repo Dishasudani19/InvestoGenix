@@ -10,6 +10,8 @@ import Crypto from "./pages/Crypto";
 import Blockchain from "./pages/Blockchain";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AboutUs from "./pages/AboutUs";
+import Courses from "./pages/Courses";
 
 
 const App = () => {
@@ -27,6 +29,9 @@ const App = () => {
                         <Route path="/crypto" element={<Crypto />} />
                         <Route path="/blockchain" element={<Blockchain />} />
                         <Route path="/budget-tools" element={<BudgetTools />} />
+                        <Route path="/about-us" element={<AboutUs />} />
+                        <Route path="/courses" element={<Courses />} />
+                        
                     </Routes>
                 </main>
 
