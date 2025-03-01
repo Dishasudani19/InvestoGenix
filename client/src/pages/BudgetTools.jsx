@@ -32,15 +32,17 @@ const BudgetTools = () => {
       </p>
       
       {/* Budget Calculator */}
-      <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
-        <div className="flex items-center mb-6">
+       {/* this below div which ends at end personally commented */}
+      {/* <div className="bg-white rounded-xl shadow-lg p-8 mb-12"> */}
+        {/* <div className="flex items-center mb-6">
           <Calculator className="h-8 w-8 text-indigo-600 mr-3" />
           <h2 className="text-2xl font-bold text-gray-900">Budget Calculator</h2>
-        </div>
+        </div> */}
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* this below div which ends at endpersonally commented*/}
+        {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-8"> */}
           {/* Income Section */}
-          <div className="lg:col-span-1">
+          {/* <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold mb-4">Monthly Income</h3>
             <div className="mb-4">
               <label htmlFor="income" className="block text-sm font-medium text-gray-700 mb-1">
@@ -60,10 +62,10 @@ const BudgetTools = () => {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
           
           {/* Expenses Section */}
-          <div className="lg:col-span-1">
+          {/* <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold mb-4">Monthly Expenses</h3>
             {Object.keys(expenses).map((category) => (
               <div className="mb-4" key={category}>
@@ -85,10 +87,10 @@ const BudgetTools = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
           
           {/* Results Section */}
-          <div className="lg:col-span-1 bg-gray-50 p-6 rounded-xl">
+          {/* <div className="lg:col-span-1 bg-gray-50 p-6 rounded-xl">
             <h3 className="text-lg font-semibold mb-4">Budget Summary</h3>
             
             <div className="mb-4">
@@ -132,9 +134,10 @@ const BudgetTools = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
+          </div> */}
+          {/* personally commented div below 2 lines*/}
+        {/* </div>
+      </div> */}
       
       {/* Financial Calculators */}
       <div className="mb-16">
@@ -144,39 +147,60 @@ const BudgetTools = () => {
             <div className="bg-indigo-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
               <Home className="h-8 w-8 text-indigo-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Mortgage Calculator</h3>
+            <h3 className=" text-black text-xl font-semibold mb-2">Compare MFs</h3>
             <p className="text-gray-600 mb-4">
-              Calculate your monthly mortgage payments based on loan amount, interest rate, and term.
+            Comparing mutual funds involves evaluating different funds based on several key factors that can impact your investment returns and risks..
             </p>
+            <a 
+                href="https://www.etmoney.com/mutual-funds/compare" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover: cursor-pointer"
+              >
             <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
-              Calculate Mortgage
-            </button>
+          
+              Compare MFs
+            </button></a>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
             <div className="bg-indigo-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
               <TrendingUp className="h-8 w-8 text-indigo-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Investment Calculator</h3>
+            <h3 className="text-black text-xl font-semibold mb-2">long-term-funds-return Calculator</h3>
             <p className="text-gray-600 mb-4">
-              Project your investment growth over time with different contribution amounts and rates of return.
+            Helping you discover investment funds with consistent, strong performance and reliable returns over extended periods.
             </p>
+            <a 
+                href="https://www.etmoney.com/mutual-funds/filter/long-term-funds-return" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover: cursor-pointer"
+              >
             <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
-              Calculate Returns
-            </button>
+          
+            long-term-funds-return
+            </button></a>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
             <div className="bg-indigo-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
               <CreditCard className="h-8 w-8 text-indigo-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Debt Payoff Calculator</h3>
+            <h3 className="text-black text-xl font-semibold mb-2">SIP Calculator</h3>
             <p className="text-gray-600 mb-4">
-              Create a plan to pay off credit cards and other debts using different strategies.
+            Helps calculate the potential returns of your SIP over time, estimating the amount accumulated from your monthly investment.
             </p>
+            <a 
+                href="https://www.etmoney.com/tools-and-calculators/sip-calculator" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover: cursor-pointer"
+              >
             <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
-              Plan Debt Payoff
-            </button>
+          
+              SIP Calculator
+            </button></a>
           </div>
         </div>
       </div>
@@ -190,7 +214,7 @@ const BudgetTools = () => {
               <div className="bg-indigo-100 p-2 rounded-full mr-3">
                 <DollarSign className="h-5 w-5 text-indigo-600" />
               </div>
-              <h3 className="text-lg font-semibold">50/30/20 Rule</h3>
+              <h3 className="text-black text-lg font-semibold">50/30/20 Rule</h3>
             </div>
             <p className="text-gray-600">
               Allocate 50% of your income to needs, 30% to wants, and 20% to savings and debt repayment. This simple framework helps maintain balance in your financial life.
@@ -202,7 +226,7 @@ const BudgetTools = () => {
               <div className="bg-indigo-100 p-2 rounded-full mr-3">
                 <ShoppingBag className="h-5 w-5 text-indigo-600" />
               </div>
-              <h3 className="text-lg font-semibold">Track Every Expense</h3>
+              <h3 className="text-black text-lg font-semibold">Track Every Expense</h3>
             </div>
             <p className="text-gray-600">
               Use apps or spreadsheets to monitor all spending. Awareness of where your money goes is the first step to taking control of your finances.
@@ -214,7 +238,7 @@ const BudgetTools = () => {
               <div className="bg-indigo-100 p-2 rounded-full mr-3">
                 <Coffee className="h-5 w-5 text-indigo-600" />
               </div>
-              <h3 className="text-lg font-semibold">Cut Small Expenses</h3>
+              <h3 className="text-black text-lg font-semibold">Cut Small Expenses</h3>
             </div>
             <p className="text-gray-600">
               Small daily purchases add up quickly. Reducing or eliminating minor expenses like daily coffee shop visits can free up significant money for savings.
@@ -226,7 +250,7 @@ const BudgetTools = () => {
               <div className="bg-indigo-100 p-2 rounded-full mr-3">
                 <PieChart className="h-5 w-5 text-indigo-600" />
               </div>
-              <h3 className="text-lg font-semibold">Automate Savings</h3>
+              <h3 className="text-black text-lg font-semibold">Automate Savings</h3>
             </div>
             <p className="text-gray-600">
               Set up automatic transfers to savings accounts on payday. What you don't see in your checking account, you won't be tempted to spend.
@@ -246,12 +270,18 @@ const BudgetTools = () => {
               className="h-48 w-full object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">Basic Budget Template</h3>
+              <h3 className="text-black text-xl font-semibold mb-2">Basic Budget Template</h3>
               <p className="text-gray-600 mb-4">
                 A simple, easy-to-use budget template for beginners. Track income, expenses, and savings with minimal effort.
               </p>
               <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
-                Download Template
+              <a 
+                href="https://happygiraffe.org/budgeting-spreadsheet/?gad_source=1&gclid=EAIaIQobChMI4Y68wt_oiwMVISBECB3qXSMNEAAYASAAEgJm7PD_BwE" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
+              >
+                Download Template</a>
               </button>
             </div>
           </div>
@@ -263,12 +293,18 @@ const BudgetTools = () => {
               className="h-48 w-full object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">Detailed Household Budget</h3>
+              <h3 className="text-black text-xl font-semibold mb-2">Detailed Household Budget</h3>
               <p className="text-gray-600 mb-4">
                 Comprehensive budget template for families with multiple income sources and detailed expense categories.
               </p>
               <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
-                Download Template
+              <a 
+                href="https://support.microsoft.com/en-us/office/manage-your-household-budget-in-excel-6b30a89b-b5ff-4cfe-944f-a389a40c3174" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
+              >
+                Download Template</a>
               </button>
             </div>
           </div>
@@ -280,12 +316,18 @@ const BudgetTools = () => {
               className="h-48 w-full object-cover"
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">Debt Reduction Planner</h3>
+              <h3 className="text-black text-xl font-semibold mb-2">Debt Reduction Planner</h3>
               <p className="text-gray-600 mb-4">
                 Specialized template focused on debt payoff strategies, including snowball and avalanche methods.
               </p>
               <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
-                Download Template
+              <a 
+                href="https://www.thebalancemoney.com/free-debt-reduction-spreadsheets-1294284" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
+              >
+                Download Template</a>
               </button>
             </div>
           </div>

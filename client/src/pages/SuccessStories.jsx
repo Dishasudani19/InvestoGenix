@@ -280,9 +280,15 @@ const SuccessStories = () => {
             <div className="p-8">
               <div className="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Stock Market Legend</div>
               <h2 className="mt-1 text-xl font-semibold text-gray-900">Rakesh Jhunjhunwala: The Big Bull of India</h2>
+              <a 
+                href="https://en.wikipedia.org/wiki/Rakesh_Jhunjhunwala" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
+              >
               <p className="mt-2 text-gray-600">
                 Rakesh Jhunjhunwala, often referred to as India's Warren Buffett, started with just $100 and turned it into billions through astute stock market investments. His long-term investment strategies and keen eye for potential have made him a legendary figure in the Indian stock market.
-              </p>
+              </p></a>
               <div className="mt-4">
                 <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
                   Stock Market
@@ -308,9 +314,15 @@ const SuccessStories = () => {
             <div className="p-8">
               <div className="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Tech Investment Tycoon</div>
               <h2 className="mt-1 text-xl font-semibold text-gray-900">Azim Premji: Tech Investment Success</h2>
+              <a 
+                href="https://www.5paisa.com/finschool/azim-premji-success-story-the-man-who-redefined-success-with-purpose-and-integrity/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
+              >
               <p className="mt-2 text-gray-600">
                 Azim Premji, the founder of Wipro, has made significant investments in the tech sector. His strategic investments in emerging technologies and startups have contributed to his immense wealth and influence in the Indian tech industry.
-              </p>
+              </p></a>
               <div className="mt-4">
                 <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
                   Tech Investment
@@ -336,9 +348,15 @@ const SuccessStories = () => {
             <div className="p-8">
               <div className="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Diversified Investment Success</div>
               <h2 className="mt-1 text-xl font-semibold text-gray-900">Anand Mahindra: Diversified Portfolio</h2>
+              <a 
+                href="https://en.wikipedia.org/wiki/Anand_Mahindra#:~:text=In%201981%2C%20Anand%20joined%20Mahindra,estate%20development%20and%20hospitality%20management." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
+              >
               <p className="mt-2 text-gray-600">
                 Anand Mahindra, Chairman of the Mahindra Group, has built a diversified investment portfolio spanning various sectors. His investments in sustainable technologies and innovative startups have yielded substantial returns and solidified his position as a leading Indian investor.
-              </p>
+              </p></a>
               <div className="mt-4">
                 <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
                   Diversification
@@ -364,9 +382,15 @@ const SuccessStories = () => {
             <div className="p-8">
               <div className="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Retail Investment Guru</div>
               <h2 className="mt-1 text-xl font-semibold text-gray-900">Radhakishan Damani: Retail Tycoon</h2>
+              <a 
+                href="https://www.vrdnation.com/radhakishan-damani-life" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
+              >
               <p className="mt-2 text-gray-600">
                 Radhakishan Damani, the founder of DMart, has made significant investments in the retail sector. His strategic approach to expanding DMart across India has turned him into a billionaire and a prominent figure in the Indian retail industry.
-              </p>
+              </p></a>
               <div className="mt-4">
                 <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-teal-100 text-teal-800">
                   Retail Investment
@@ -392,9 +416,15 @@ const SuccessStories = () => {
             <div className="p-8">
               <div className="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Energy and Telecom Tycoon</div>
               <h2 className="mt-1 text-xl font-semibold text-gray-900">Mukesh Ambani: Reliance Industries</h2>
+              <a 
+                href="https://www.etnownews.com/success-stories/mukesh-ambani-net-worth-the-billionaire-behind-reliance-industries-is-18th-richest-man-in-the-world-career-family-education-and-more-article-118060287#:~:text=Mukesh%20Ambani's%20Career&text=He%20joined%20Reliance%20in%201981,position%20as%20a%20global%20powerhouse." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
+              >
               <p className="mt-2 text-gray-600">
                 Mukesh Ambani, Chairman of Reliance Industries, has made strategic investments in the energy and telecom sectors. His visionary leadership has transformed Reliance into one of the world's most valuable companies, making him one of the wealthiest individuals globally.
-              </p>
+              </p></a>
               <div className="mt-4">
                 <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
                   Energy Investment
@@ -420,9 +450,15 @@ const SuccessStories = () => {
             <div className="p-8">
               <div className="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Fintech Pioneer</div>
               <h2 className="mt-1 text-xl font-semibold text-gray-900">Nithin Kamath: Zerodha Success Story</h2>
+              <a 
+                href="https://www.finowings.com/Success-Story/nithin-kamath-success-story-founder-zerodha" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
+              >
               <p className="mt-2 text-gray-600">
                 Nithin Kamath, the founder of Zerodha, revolutionized the Indian stockbroking industry by introducing low-cost trading platforms. His innovative approach has made Zerodha one of the largest stockbrokers in India, contributing to his significant wealth.
-              </p>
+              </p></a>
               <div className="mt-4">
                 <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
                   Fintech
