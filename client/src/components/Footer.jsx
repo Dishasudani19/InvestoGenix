@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">FinanceEdu</h3>
+            <h3 className="text-xl font-bold mb-4">Investogenix</h3>
             <p className="text-gray-300 mb-4">
               Empowering financial literacy through education, tools, and resources.
             </p>
@@ -55,7 +55,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center">
                 <MapPin size={16} className="mr-2" />
-                <span className="text-gray-300">123 Finance St, Money City</span>
+                <span className="text-gray-300">CSPIT - CHARUSAT Anand.</span>
               </li>
               <li className="flex items-center">
                 <Phone size={16} className="mr-2" />
@@ -63,14 +63,14 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-2" />
-                <span className="text-gray-300">info@financeedu.com</span>
+                <span className="text-gray-300">info@investogenix.com</span>
               </li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; {new Date().getFullYear()} FinanceEdu. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Investogenix. All rights reserved.</p>
         </div>
       </div>
     </footer>
