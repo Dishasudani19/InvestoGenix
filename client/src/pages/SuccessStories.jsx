@@ -273,7 +273,7 @@ const SuccessStories = () => {
             <div className="md:flex-shrink-0">
               <img
                 className="h-48 w-full object-cover md:w-48"
-                src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q="
+                src="src/assets/Images/rakesh.jpg"
                 alt="Rakesh Jhunjhunwala"
               />
             </div>
@@ -307,7 +307,7 @@ const SuccessStories = () => {
             <div className="md:flex-shrink-0">
               <img
                 className="h-48 w-full object-cover md:w-48"
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                src="src/assets/Images/azim.jpg"
                 alt="Azim Premji"
               />
             </div>
@@ -341,7 +341,7 @@ const SuccessStories = () => {
             <div className="md:flex-shrink-0">
               <img
                 className="h-48 w-full object-cover md:w-48"
-                src="https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                src="src/assets/Images/anand.png"
                 alt="Anand Mahindra"
               />
             </div>
@@ -375,7 +375,7 @@ const SuccessStories = () => {
             <div className="md:flex-shrink-0">
               <img
                 className="h-48 w-full object-cover md:w-48"
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                src="src/assets/Images/radha.png"
                 alt="Radhakishan Damani"
               />
             </div>
@@ -409,7 +409,7 @@ const SuccessStories = () => {
             <div className="md:flex-shrink-0">
               <img
                 className="h-48 w-full object-cover md:w-48"
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                src="src/assets/Images/ambani.png"
                 alt="Mukesh Ambani"
               />
             </div>
@@ -443,7 +443,7 @@ const SuccessStories = () => {
             <div className="md:flex-shrink-0">
               <img
                 className="h-48 w-full object-cover md:w-48"
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                src="src/assets/Images/nithin.png"
                 alt="Nithin Kamath"
               />
             </div>

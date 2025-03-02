@@ -7,4 +7,5 @@ pytz
 dnspython
 requests
 groq
-
+django-allauth<0.60
+requests

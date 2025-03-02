@@ -3,20 +3,20 @@ import { BookOpen, TrendingUp, PieChart, DollarSign, ArrowRight } from 'lucide-r
 
 const Courses = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-white">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Available Courses</h1>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h1 className="text-3xl font-bold text-gray-900 mb-8">Recommended Courses</h1>
       <p className="text-lg text-gray-600 mb-12">
         Explore a variety of financial education courses available on third-party platforms.
       </p>
 
-      <div className="space-y-12">
+      <div className="space-y-12 ">
         {/* Course 1 */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           <div className="md:flex">
             <div className="md:flex-shrink-0">
               <img
                 className="h-48 w-full object-cover md:w-48"
-                src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                src="src/assets/Images/upgrad.png"
                 alt="Financial Basics"
               />
             </div>
@@ -52,7 +52,7 @@ const Courses = () => {
             <div className="md:flex-shrink-0">
               <img
                 className="h-48 w-full object-cover md:w-48"
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                src="src/assets/Images/courseera.png"
                 alt="Investment Strategies"
               />
             </div>
@@ -124,7 +124,7 @@ const Courses = () => {
             <div className="md:flex-shrink-0">
               <img
                 className="h-48 w-full object-cover md:w-48"
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                src="src/assets/Images/udemy.png"
                 alt="Retirement Planning"
               />
             </div>
