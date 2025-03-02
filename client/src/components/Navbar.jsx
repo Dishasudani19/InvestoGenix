@@ -210,12 +210,13 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { FaUserCircle } from "react-icons/fa"; // Import user profile icon
 import AuthPopup from "./AuthPopup";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const isLoggedIn = localStorage.getItem("token");
-
+  const navigate = useNavigate();
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -228,7 +229,9 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // Remove token
+    navigate("/"); // Redirect to home
     window.location.reload(); // Reload to reflect logout
+
   };
 
   return (

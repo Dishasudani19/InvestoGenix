@@ -1,5 +1,7 @@
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, User
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
+import json
 
 class UserManager(BaseUserManager):
     def create_user(self, email, name, password=None):
@@ -54,3 +56,55 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def has_module_perms(self, app_label):
         return True
+    
+
+
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    # If you want to associate profiles with users later
+    
+    # Personal Information
+    fullName = models.CharField(max_length=255)
+    age = models.PositiveIntegerField()
+    occupation = models.CharField(max_length=255)
+    
+    # Financial Status
+    annualIncome = models.DecimalField(max_digits=15, decimal_places=2)
+    monthlyExpenses = models.DecimalField(max_digits=15, decimal_places=2)
+    savingsAmount = models.DecimalField(max_digits=15, decimal_places=2)
+    
+    # Investment Profile
+    EXPERIENCE_CHOICES = [
+        ('beginner', 'Beginner'),
+        ('intermediate', 'Intermediate'),
+        ('advanced', 'Advanced'),
+    ]
+    investmentExperience = models.CharField(max_length=20, choices=EXPERIENCE_CHOICES, default='beginner')
+    riskTolerance = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)], default=50)
+    financialGoals = models.TextField(blank=True)
+    
+    # Financial Situation
+    hasEmergencyFund = models.BooleanField(default=False)
+    hasDebts = models.BooleanField(default=False)
+    
+    # Learning Interests
+    _interestedTopics = models.TextField(blank=True, db_column='interestedTopics')
+    
+    # Created/Updated timestamps
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    @property
+    def interestedTopics(self):
+        if not self._interestedTopics:
+            return []
+        return json.loads(self._interestedTopics)
+    
+    @interestedTopics.setter
+    def interestedTopics(self, value):
+        self._interestedTopics = json.dumps(value)
+    
+    def __str__(self):
+        return f"Profile for {self.fullName}"

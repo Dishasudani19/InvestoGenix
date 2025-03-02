@@ -13,8 +13,12 @@ import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import AboutUs from "./pages/AboutUs";
 import Courses from "./pages/Courses";
-import JotformChatbot from "./components/GenixBot";
+
 import GenixBotUI from "./components/GenixBot";
+
+import ProtectedRoute from "./components/ProtectedRoutes";
+//import ProtectedRoute from '@/components/ProtectedRoute';
+
 
 
 const App = () => {
@@ -33,9 +37,11 @@ const App = () => {
                         <Route path="/blockchain" element={<Blockchain />} />
                         <Route path="/budget-tools" element={<BudgetTools />} />
                         <Route path="/about-us" element={<AboutUs />} />
-                        <Route path="/profile" element={<Profile />} />
-                        <Route path="/courses" element={<Courses />} />
                         <Route path="/chatbot" element={<GenixBotUI />} />
+                         {/* Protected Routes */}
+                         <Route path="/courses" element={<ProtectedRoute element={<Courses />}/>} />
+                         <Route path="/profile" element={<ProtectedRoute element={<Profile />}/>} />
+                       
                     </Routes>
                 </main>
 

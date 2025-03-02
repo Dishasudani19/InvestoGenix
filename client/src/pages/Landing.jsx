@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { TrendingUp, DollarSign, PieChart, BookOpen, Award, ArrowRight, ChevronRight } from 'lucide-react';
 import AuthPopup from '../components/AuthPopup';
 import { useNavigate } from "react-router-dom";
+import GenixBot from '../components/GenixBot';
+
 const Landing = () => {
   
   
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem("token");
 
   return (
     <div className="flex flex-col">
@@ -48,7 +51,14 @@ const Landing = () => {
         isOpen={isAuthOpen} 
         onClose={() => setIsAuthOpen(false)} 
       />
-
+  
+     
+      {/* Render GenixBot if user is logged in */}
+      {isLoggedIn && (
+        <div className="fixed bottom-5 right-5">
+          <GenixBot />
+        </div>
+      )}
       {/* Features Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
