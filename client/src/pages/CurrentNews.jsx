@@ -269,6 +269,7 @@ const CurrentNews = () => {
     try {
       const response = await axios.get(
         `https://newsapi.org/v2/top-headlines?apiKey=c83afa70861142bca95abc856fc48b5a&q=${category}`
+        // `http://api.mediastack.com/v1/news?access_key=ec4bf60b73c561ae74efea0e6534822b&keywords=stock&countries=us,gb,de`
       );
       setNews(response.data.articles);
       setLoading(false);

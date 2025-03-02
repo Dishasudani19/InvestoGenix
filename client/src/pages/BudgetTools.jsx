@@ -149,7 +149,7 @@ const BudgetTools = () => {
             </div>
             <h3 className=" text-black text-xl font-semibold mb-2">Compare MFs</h3>
             <p className="text-gray-600 mb-4">
-            Comparing mutual funds involves evaluating different funds based on several key factors that can impact your investment returns and risks..
+            Comparing mutual funds involves evaluating different funds based on several key factors that impact your investment returns and risks.
             </p>
             <a 
                 href="https://www.etmoney.com/mutual-funds/compare" 
@@ -157,7 +157,7 @@ const BudgetTools = () => {
                 rel="noopener noreferrer"
                 className="block mt-2 text-gray-600 hover: cursor-pointer"
               >
-            <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+            <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors bg-black">
           
               Compare MFs
             </button></a>
@@ -274,15 +274,15 @@ const BudgetTools = () => {
               <p className="text-gray-600 mb-4">
                 A simple, easy-to-use budget template for beginners. Track income, expenses, and savings with minimal effort.
               </p>
-              <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
               <a 
                 href="https://happygiraffe.org/budgeting-spreadsheet/?gad_source=1&gclid=EAIaIQobChMI4Y68wt_oiwMVISBECB3qXSMNEAAYASAAEgJm7PD_BwE" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
               >
-                Download Template</a>
-              </button>
+              <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+                Download Template
+              </button></a>
             </div>
           </div>
           
@@ -297,15 +297,16 @@ const BudgetTools = () => {
               <p className="text-gray-600 mb-4">
                 Comprehensive budget template for families with multiple income sources and detailed expense categories.
               </p>
-              <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
               <a 
                 href="https://support.microsoft.com/en-us/office/manage-your-household-budget-in-excel-6b30a89b-b5ff-4cfe-944f-a389a40c3174" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
               >
-                Download Template</a>
-              </button>
+              <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+              
+                Download Template
+              </button></a>
             </div>
           </div>
           
@@ -320,15 +321,15 @@ const BudgetTools = () => {
               <p className="text-gray-600 mb-4">
                 Specialized template focused on debt payoff strategies, including snowball and avalanche methods.
               </p>
-              <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
               <a 
                 href="https://www.thebalancemoney.com/free-debt-reduction-spreadsheets-1294284" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="block mt-2 text-gray-600 hover:text-blue-600 cursor-pointer"
               >
-                Download Template</a>
-              </button>
+              <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+                Download Template
+              </button></a>
             </div>
           </div>
         </div>
