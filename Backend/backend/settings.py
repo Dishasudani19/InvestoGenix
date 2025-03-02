@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     'corsheaders', 
     "rest_framework_simplejwt",
     "authentication",
+    'rest_framework.authtoken',
+    'chatbot',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +93,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'Django',  # Your MongoDB database name
+        'NAME': 'odoo',  # Your MongoDB database name
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
             'host': 'mongodb://localhost:27017/',  # MongoDB Compass connection
@@ -147,7 +150,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    )
+    ),
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.AllowAny", 
+    ),
+
 }
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),  # Set token lifetime
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "AUTH_HEADER_TYPES": ("Bearer",),  # Ensure Bearer token is recognized
+}
+
+AUTH_USER_MODEL = "authentication.User"
+
 
 CORS_ALLOW_ALL_ORIGINS = True  # Allow React frontend to access API
