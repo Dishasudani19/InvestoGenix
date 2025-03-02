@@ -3,11 +3,16 @@ import { login } from "../api.jsx";
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import '../assets/css/login.css';
-import { FaGoogle, FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 const Login = ({ onClose, switchToRegister }) => {
   const [user, setUser] = useState({ email: "", password: "" });
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  
+  const handleGoogleLogin = () => {
+    window.location.href = "http://127.0.0.1:8000/accounts/google/login/";
+  };
 
   const handleChange = (e) => {
              setUser({ ...user, [e.target.name]: e.target.value });
@@ -84,13 +89,16 @@ const Login = ({ onClose, switchToRegister }) => {
                               Login
                             </button>
                           </form>
-                          {/* <div className="social-login">
+                          <div className="social-login">
                             <p>or login with social platforms</p>
                             <div className="social-icons">
-                              <button className="social-icon">
-                                <FaGoogle />
+                              <button onClick={handleGoogleLogin} className="social-icon">
+                              {/* <FaGoogle className="text-red-500 w-8 h-8 block" /> */}
+                              {/* <i className="fa fa-google" aria-hidden="true"></i> */}
+                              <FontAwesomeIcon icon={faGoogle} style={{ fontSize: "24px", color: "#DB4437" }} />
+
                               </button>
-                              <button className="social-icon">
+                              {/* <button className="social-icon">
                                 <FaFacebook />
                               </button>
                               <button className="social-icon">
@@ -98,9 +106,9 @@ const Login = ({ onClose, switchToRegister }) => {
                               </button>
                               <button className="social-icon">
                                 <FaLinkedin />
-                              </button>
+                              </button> */}
                             </div>
-                          </div> */}
+                          </div> 
                         </div>
                       </div>
                       <button className="close-btn" onClick={onClose}>

@@ -285,13 +285,15 @@ const Landing = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-10 md:mb-0">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Master Your Finances</h1>
+          <div className="flex flex-col items-center justify-center min-h-[50vh] text-center">
+            <div className="mb-10">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Transform Your Financial Life</h1>
+
               <p className="text-xl mb-8">
                 Learn, plan, and grow with our expert financial education resources and tools.
               </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <div className="flex justify-center flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+
               {!localStorage.getItem("token") && (
                <button 
                    className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" 
@@ -305,38 +307,10 @@ const Landing = () => {
                 </button>
               </div>
             </div>
-            <div className="md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Financial Planning" 
-                className="rounded-lg shadow-xl"
-              />
-            </div>
+
           </div>
           </div>
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex flex-col items-center justify-center min-h-[50vh] text-center">
-      <div className="mb-10">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Transform Your Financial Life</h1>
-        <p className="text-xl mb-8">
-          Learn, plan, and grow with our expert financial education resources and tools.
-        </p>
-        <div className="flex justify-center flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          {!localStorage.getItem("token") && (
-            <button
-              className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              onClick={() => setIsAuthOpen(true)}
-            >
-              Get Started
-            </button>
-          )}
-          <button className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Learn More
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </section>
 
       <AuthPopup

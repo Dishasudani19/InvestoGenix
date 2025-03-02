@@ -7,7 +7,11 @@ const GenixBotUI = () => {
   // States for chat functionality
   const [inputMessage, setInputMessage] = useState('');
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hello! I'm GenixBot, your friendly AI Agent here to help with finance. How can I assist you?", sender: "bot" }
+    { 
+      id: 1, 
+      text: "Hello! I'm GenixBot, your friendly AI Agent here to help with finance. How can I assist you?", 
+      sender: "bot" 
+    }
   ]);
   const [activeTab, setActiveTab] = useState('chat');
   const [minimized, setMinimized] = useState(false);
@@ -39,6 +43,21 @@ const GenixBotUI = () => {
 
   const toggleMinimize = () => {
     setMinimized(!minimized);
+  };
+
+  // Function to format bot messages with bold text and proper spacing
+  const formatBotMessage = (text) => {
+    if (!text) return "";
+    
+    // Replace **text** with bold formatting
+    const boldFormatted = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    
+    // Ensure proper paragraph spacing (convert double line breaks to paragraphs)
+    const paragraphFormatted = boldFormatted.split('\n\n').map((paragraph, index) => (
+      <p key={index} className={index > 0 ? "mt-2" : ""}>{paragraph}</p>
+    ));
+    
+    return paragraphFormatted;
   };
 
   const handleSendMessage = async () => {
@@ -80,7 +99,8 @@ const GenixBotUI = () => {
       const botResponse = {
         id: messages.length + 2,
         text: res.data.response,
-        sender: "bot"
+        sender: "bot",
+        formatted: true // Flag to indicate this message should use formatting
       };
       
       setMessages(prev => prev.map(msg => 
@@ -138,8 +158,8 @@ const GenixBotUI = () => {
           </button>
         </div>
       ) : (
-        // Normal chat interface when not minimized
-        <div className="w-200 rounded-2xl overflow-hidden shadow-xl bg-white fixed bottom-4 right-4">
+        // Normal chat interface when not minimized - WIDER VERSION
+        <div className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 max-w-2xl rounded-2xl overflow-hidden shadow-xl bg-white fixed bottom-4 right-4">
           {/* Header */}
           <div className="bg-blue-600 p-3 relative flex items-center justify-between">
             <div className="flex items-center">
@@ -164,27 +184,29 @@ const GenixBotUI = () => {
               onClick={toggleMinimize} 
               className="text-white hover:bg-blue-700 rounded p-1"
             >
-              <X className="w-5 h-5 text-black" />
+              <X className="w-5 h-5 text-white" />
             </button>
           </div>
           
-          {/* Chat Area */}
-          <div className="h-80 overflow-y-auto p-3 bg-white">
+          {/* Chat Area - Increased height for better viewing */}
+          <div className="h-96 overflow-y-auto p-4 bg-white">
             {messages.map((message) => (
-              <div key={message.id} className={`mb-3 ${message.sender === 'user' ? 'text-right' : ''}`}>
-                <div className={`inline-block rounded-lg py-2 px-3 max-w-xs ${
+              <div key={message.id} className={`mb-4 ${message.sender === 'user' ? 'text-right' : ''}`}>
+                <div className={`inline-block rounded-lg py-3 px-4 ${
                   message.sender === 'user' 
                     ? 'bg-blue-100 text-blue-800' 
                     : message.isError
                       ? 'bg-red-100 text-red-800'
                       : 'bg-gray-100 text-gray-800'
-                }`}>
+                } ${message.sender === 'bot' ? 'text-left max-w-3xl' : 'max-w-md'}`}>
                   {message.isTyping ? (
                     <div className="flex space-x-1">
                       <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0ms' }}></div>
                       <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '150ms' }}></div>
                       <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '300ms' }}></div>
                     </div>
+                  ) : message.formatted ? (
+                    <div dangerouslySetInnerHTML={{ __html: message.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '<br/><br/>').replace(/\n/g, '<br/>') }} />
                   ) : (
                     message.text
                   )}
@@ -198,25 +220,26 @@ const GenixBotUI = () => {
             )}
           </div>
           
-          {/* Input Area */}
+          {/* Input Area - Wider to match new width */}
           <div className="border-t border-gray-200">
-            <div className="flex items-center px-3 py-2">
+            <div className="flex items-center px-4 py-3">
               <input
                 type="text"
                 value={inputMessage}
                 onChange={handleInputChange}
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                placeholder="Type here"
-                className="flex-1 border-0 outline-none text-gray-600 bg-gray-100 rounded-full px-4 py-2 text-sm"
+                placeholder="Type your financial question here..."
+                className="flex-1 border-0 outline-none text-gray-600 bg-gray-100 rounded-full px-4 py-3 text-sm"
                 disabled={loading}
               />
               <button 
                 onClick={handleSendMessage}
-                className={`ml-2 w-8 h-8 rounded-full ${loading ? 'bg-gray-400' : 'bg-green-600'} flex items-center justify-center text-white`}
+                className={`ml-3 w-10 h-10 rounded-full ${loading ? 'bg-gray-400' : 'bg-green-600'} flex items-center justify-center text-white`}
                 disabled={loading}
               >
+                <i className='fas fa-arrow-up'></i>
                 {loading ? (
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                 ) : (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -229,7 +252,7 @@ const GenixBotUI = () => {
           {/* Bottom Navigation */}
           <div className="flex justify-around border-t border-gray-200 text-xs">
             <button 
-              className={`flex flex-col items-center py-2 px-4 ${activeTab === 'chat' ? 'text-blue-600' : 'text-gray-500'}`}
+              className={`flex flex-col items-center py-3 px-4 ${activeTab === 'chat' ? 'text-blue-600' : 'text-gray-500'}`}
               onClick={() => setActiveTab('chat')}
             >
               <svg className="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -238,7 +261,7 @@ const GenixBotUI = () => {
               Chat
             </button>
             <button 
-              className={`flex flex-col items-center py-2 px-4 ${activeTab === 'voice' ? 'text-blue-600' : 'text-gray-500'}`}
+              className={`flex flex-col items-center py-3 px-4 ${activeTab === 'voice' ? 'text-blue-600' : 'text-gray-500'}`}
               onClick={() => setActiveTab('voice')}
             >
               <svg className="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -247,7 +270,7 @@ const GenixBotUI = () => {
               Voice
             </button>
             <button 
-              className={`flex flex-col items-center py-2 px-4 ${activeTab === 'history' ? 'text-blue-600' : 'text-gray-500'}`}
+              className={`flex flex-col items-center py-3 px-4 ${activeTab === 'history' ? 'text-blue-600' : 'text-gray-500'}`}
               onClick={() => setActiveTab('history')}
             >
               <svg className="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

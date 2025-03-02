@@ -10,4 +10,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  server: {
+    proxy: {
+      '/fontawesome': {
+        target: 'https://kit.fontawesome.com',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/fontawesome/, ''),
+      },
+    },
+  },
 })

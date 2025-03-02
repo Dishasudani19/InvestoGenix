@@ -310,6 +310,12 @@ const Navbar = () => {
                 >
                   <FaUserCircle className="h-7 w-7 text-gray-700" />
                 </button>
+                <span className="text-gray-800 font-medium text-sm">
+                  {/* console.log("userEmail"); */}
+                  
+      {localStorage.getItem("userEmail") } {/* Fallback if email is not found */}
+    </span>
+  
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
